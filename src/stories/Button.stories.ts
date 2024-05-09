@@ -29,9 +29,17 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // argを使用したストーリーの書き方について: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Filled: Story = {
   args: {
     style: 'filled', // ボタンスタイルを'filled'に設定
     children: 'Button', // ボタンに表示するテキスト
   },
 };
+
+export const Outlined: Story = {
+  args: {
+    style: "outlined", // ボタンスタイルを'filled'に設定
+    children: 'Button', // ボタンに表示するテキスト
+  },
+};
+
