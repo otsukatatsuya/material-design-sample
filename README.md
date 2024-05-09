@@ -1,30 +1,57 @@
-# React + TypeScript + Vite
+# 概要・目的
+- 出来上がったデザインをどのように実装に落とし込むかを体系的に学ぶ演習
+- 実際にReact(TS) + StoryBook + Tailwindを実装する
+- [デザイン](https://www.figma.com/file/77z4ekDS0ykkw2ZYg8X0Hp/Material-3-Design-Kit-(Community)?type=design&node-id=51159-4655&mode=dev)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 現状
+- Buttonコンポーネントの、FilledとOutlinedが実装済みで、StoryBook上で確認できる
 
-Currently, two official plugins are available:
+## 目標
+- Iconを表示したButtonコンポーネントをStoryBook上で確認できる
+- Elevated buttonsのStoryをStoryBook上で確認できる
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 実装関連
 
-## Expanding the ESLint configuration
+### ディレクトリ構成
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+対象のファイルは以下です
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
 ```
+.
+└── src
+    └── stories
+        ├── Button.tsx
+        └── Button.stories.ts
+```
+### React(TS)
+- Propsとは
+- JSXとは
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Storybook
+
+- [特定の状態(story)のコンポーネントを描画する方法](https://qiita.com/masakinihirota/items/ac552b8b492d2b962818#storybook%E3%81%A7%E6%9C%80%E5%B0%8F%E9%99%90%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8B)
+
+### Tailwind
+
+- 変数を追加する方法
+- 横並びにする方法
+- スペースを設ける方法
+
+
+## ローカルで作業する手順
+
+- 前提
+  - node,npmがinstall済み
+
+1. 任意の作業フォルダに移動
+2. 以下のコマンドで、リポジトリを取得
+```
+git clone https://github.com/otsukatatsuya/material-design-sample.git
+```
+4. 任意のIDEを用いて、そちらを開く
+5. ルートで、以下のコマンドを実行
+```
+npm i
+npm run storybook
+```
+7. webサーバーが立ち上がり、正常に閲覧できることを確認する
